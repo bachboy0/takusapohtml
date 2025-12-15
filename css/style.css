@@ -316,8 +316,6 @@ a {
    関空ページ固有
    ========================================= */
 .kanku-container {
-  width: 100vw;
-  margin: 0.25rem;
   border-radius: 0.5rem;
   background-color: #508c52;
   padding: 0.25rem;
@@ -342,7 +340,7 @@ a {
   overflow: hidden;
   border-radius: 1rem;
   cursor: pointer;
-  height: 100vhrem;
+  height: 100vh;
   display: block;
   text-decoration: none;
 }
