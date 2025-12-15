@@ -317,9 +317,7 @@ a {
    ========================================= */
 .kanku-container {
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  margin: 0.25rem;
   border-radius: 0.5rem;
   background-color: #508c52;
   padding: 0.25rem;
