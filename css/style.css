@@ -340,7 +340,7 @@ a {
   overflow: hidden;
   border-radius: 1rem;
   cursor: pointer;
-  height: 100vh;
+  height: 50vh;
   display: block;
   text-decoration: none;
 }
