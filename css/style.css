@@ -66,7 +66,7 @@ a {
 
 /* ページタイトル */
 .page-header-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin: 1rem;
   text-align: center;
@@ -316,20 +316,21 @@ a {
    関空ページ固有
    ========================================= */
 .kanku-container {
-  margin: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  border-radius: 1rem;
-  /* color-green-900 */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
   background-color: #508c52;
-  padding: 1rem;
+  padding: 0.25rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .kanku-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 0.25rem;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -343,7 +344,7 @@ a {
   overflow: hidden;
   border-radius: 1rem;
   cursor: pointer;
-  height: 37.5rem;
+  height: 100vhrem;
   display: block;
   text-decoration: none;
 }
