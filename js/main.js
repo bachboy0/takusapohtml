@@ -18,15 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("shinkansen-content");
 
   if (btn && content) {
-    let isOpen = false;
+    // トグルボタンのテキスト
+    const texts = {
+      open: "🚅 新幹線運行情報<br>（タップで閉じる）",
+      close: "🚅 新幹線運行情報<br>（タップで開く）",
+    };
+
+    // ブラウザのローカルストレージから新幹線バナーの表示状態を取得
+    // ローカルストレージに "shinkansenBanner" が "false" として保存されていない場合、バナーは表示状態（true）
+    let isOpen = localStorage.getItem("shinkansenBanner") !== "false";
+
+    // 状態更新を一元化
+    const updateState = () => {
+      content.style.maxHeight = isOpen ? content.scrollHeight + "px" : "0";
+      btn.innerHTML = isOpen ? texts.open : texts.close;
+      localStorage.setItem("shinkansenBanner", isOpen);
+    };
+
+    updateState(); // 初期状態を反映
 
     btn.addEventListener("click", () => {
       isOpen = !isOpen;
-      // 三項演算子によるボタンテキストとコンテンツの表示を切替
-      btn.innerHTML = isOpen
-        ? "🚅 新幹線運行情報<br>（タップで閉じる）"
-        : "🚅 新幹線運行情報<br>（タップで開く）";
-      content.style.maxHeight = isOpen ? content.scrollHeight + "px" : "0";
+      updateState();
     });
 
     resizeIframe();
