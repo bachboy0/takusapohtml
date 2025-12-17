@@ -1,141 +1,218 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>まき＠ライブカメラ</title>
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSERMB2DDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <link rel="stylesheet" href="css/style.css" />
+  gtag('config', 'G-DSERMB2DDZ');
+</script>
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DSERMB2DDZ"
-    ></script>
-    <script src="js/main.js"></script>
-  </head>
-  <body>
-    <div class="banner-container">
-      <img src="images/jr.jpg" alt="バナー画像" class="banner-image" />
-    </div>
-    <br /><br />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>まき＠ライブカメラ</title>
 
-    <div class="container-legacy">
-      <div class="card-legacy">
-        <iframe
-          src="https://www.youtube.com/embed/l_KhuN2nooY?autoplay=1&mute=1&playsinline=1&controls=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-        <p class="label-legacy">新大阪プール</p>
-      </div>
+<style>
+.banner-container {
+  /* 親要素をブロック要素にし、必要に応じてマージンをリセット */
+  width: 100%; /* 横幅を親要素（画面幅）いっぱいに設定 */
+  max-width: 100%; /* 念のため最大幅も100%に */
+  margin: 0 auto; /* 中央寄せにしたい場合 */
+}
 
-      <div class="card-legacy">
-        <iframe
-          src="https://www.youtube.com/embed/vxRaY0mXBbU?autoplay=1&mute=1&playsinline=1&controls=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-        <p class="label-legacy">新大阪乗り場</p>
-      </div>
+.banner-image {
+  /* 画像そのものに対する設定 */
+  width: 100%; /* 親要素 (banner-container) の幅いっぱいに引き伸ばす */
+  height: auto; /* **これが縦横比を保持する最も重要な設定です** */
+  display: block; /* 画像の下にできる余白（インライン要素の特性）を消す */
+}
+  body {
+    margin: 0;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background: #111;
+    color: #fff;
+    font-family: sans-serif;
+  }
 
-      <div class="card-legacy">
-        <iframe
-          src="https://www.youtube.com/embed/3gqzHOdDKp0?autoplay=1&mute=1&playsinline=1&controls=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-        <p class="label-legacy">新御堂ライブ</p>
-      </div>
+  .page-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 14px 0;
+    background: #000;
+    margin: 0;
+  }
 
-      <div class="card-legacy">
-        <iframe
-          src="https://www.youtube.com/embed/jDCCynfjX9I?autoplay=1&mute=1&playsinline=1&controls=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-        <p class="label-legacy">大阪駅プール</p>
-      </div>
+  .card {
+    margin: 0 0 16px 0;
+  }
 
-      <div class="card-legacy">
-        <iframe
-          src="https://www.youtube.com/embed/GuQ2MuyvKWY?autoplay=1&mute=1&playsinline=1&controls=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
-        <p class="label-legacy">北新地本通</p>
-      </div>
-    </div>
+  iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    display: block;
+  }
 
-    <div class="divider"></div>
+  .label {
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 1rem;
+    background: #222;
+  }
 
-    <a
-      class="back-link"
-      href="https://traininfo.jr-central.co.jp/shinkansen/sp/ja/ti09.html#tab3"
-      >🚉 新大阪駅到着列車案内</a
-    >
-    <a class="back-link" href="kanku.html">✈ 関空ライブ映像を見る</a>
-    <a
-      class="back-link link-spacer"
-      href="https://soemon-cho.com/active/camera/"
-      >🍺 ミナミのライブ映像</a
-    >
+  /* ========= 仕切り線 ========= */
+  .divider {
+    width: 90%;
+    height: 1px;
+    background: #444;
+    margin: 30px auto 20px;
+    border-radius: 50px;
+  }
 
-    <hr />
+  /* ========= 戻るバナー ========= */
+  .back-link {
+    width: 90%;
+    margin: 0 auto 40px;
+    display: block;
+    text-decoration: none;
+    background: #222;
+    color: #fff;
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: 0.2s;
+  }
+  .back-link:hover {
+    background: #333;
+  }
 
-    <div class="counter-table">
-      <nobr>
-        <table
-          border="0"
-          cellspacing="0"
-          cellpadding="0"
-          style="margin: 0 auto"
-        >
-          <tbody>
-            <tr>
-              <td>
-                <a href="https://ctr.stylemap.co.jp/"
-                  ><img
-                    src="https://www.f-counter.net/ani1/64/1729065540/"
-                    alt="無料アクセスカウンター"
-                    border="0"
-                    style="
-                      margin: 0px;
-                      padding: 0px;
-                      border: 0px;
-                      vertical-align: bottom;
-                    "
-                /></a>
-              </td>
-              <td>
-                <a href="https://ctr.stylemap.co.jp/"
-                  ><img
-                    src="https://www.f-counter.net/ani2/64/1729065540/"
-                    alt="無料アクセスカウンター"
-                    border="0"
-                    style="
-                      margin: 0px;
-                      padding: 0px;
-                      border: 0px;
-                      vertical-align: bottom;
-                    "
-                /></a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </nobr>
-    </div>
+  @media (min-width: 800px) {
+    body { padding: 0; }
 
-    <div class="divider"></div>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    .page-title { font-size: 2rem; }
 
-    <a
-      class="line-link"
-      href="https://line.me/ti/g2/ZWvOSsjSGjcax8BIDbFpZyqxTJyeV5PbSrv8XA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-    >
-      💬 大阪タクドラ情報交換グループ<br />（参加はこちら）
-    </a>
-  </body>
+    .card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #222;
+    }
+    .label { background: #111; }
+
+    .back-link {
+      max-width: 500px;
+      font-size: 1.2rem;
+    }
+  }
+
+/* LINEボタン風リンク */
+.line-link {
+  width: 90%;
+  margin: 0 auto 40px;
+  display: block;
+  text-decoration: none;
+  background: #06C755; /* LINEカラー */
+  color: #fff;
+  padding: 15px 18px;
+  text-align: center;
+  font-size: 1.15rem;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: 0.2s;
+}
+
+.line-link:hover {
+  background: #05b24b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* PC時の最適化 */
+@media (min-width: 800px) {
+  .line-link {
+    max-width: 500px;
+    font-size: 1.2rem;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="banner-container">
+  <img src="jr.jpg" alt="バナー画像" class="banner-image">
+</div><br><br>
+<div class="container">
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/l_KhuN2nooY?autoplay=1&mute=1&playsinline=1&controls=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p class="label">新大阪プール</p>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/vxRaY0mXBbU?autoplay=1&mute=1&playsinline=1&controls=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p class="label">新大阪乗り場</p>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/3gqzHOdDKp0?autoplay=1&mute=1&playsinline=1&controls=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p class="label">新御堂ライブ</p>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/jDCCynfjX9I	?autoplay=1&mute=1&playsinline=1&controls=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p class="label">大阪駅プール</p>
+  </div>
+
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/GuQ2MuyvKWY?autoplay=1&mute=1&playsinline=1&controls=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p class="label">北新地本通</p>
+  </div>
+  <div class="card">
+    <iframe src="https://www.youtube.com/embed/1IB96p46tjE?autoplay=1&mute=1&playsinline=1&controls=1"
+      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p class="label">道頓堀</p>
+  </div>
+</div>
+
+
+
+
+
+<!-- 🔽 区切り + 戻るバナー 🔽 -->
+<div class="divider"></div>
+<a class="back-link" href="https://traininfo.jr-central.co.jp/shinkansen/sp/ja/ti09.html#tab3">🚉 新大阪駅到着列車案内</a>
+<a class="back-link" href="../jr2/index.html">✈ 関空ライブ映像を見る</a>
+<a class="back-link" href="https://soemon-cho.com/active/camera/">🍺 ミナミのライブ映像</a>
+  <hr><!--カウンター画像からは配布サイトへリンクが設定されています。また、誤作動、誤表示の原因となりますのでコードの改変、改行は行わないで下さい。
+このコメント部分は削除して頂いても結構です。-->
+<nobr><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><a href="https://ctr.stylemap.co.jp/"><img src="https://www.f-counter.net/ani1/64/1729065540/" alt="無料アクセスカウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></a></td>
+<td><a href="https://ctr.stylemap.co.jp/"><img src="https://www.f-counter.net/ani2/64/1729065540/" alt="無料アクセスカウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></a></td></tr></tbody></table></nobr>
+<div class="divider"></div>
+
+<a class="line-link" 
+   href="https://line.me/ti/g2/ZWvOSsjSGjcax8BIDbFpZyqxTJyeV5PbSrv8XA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">
+  💬 大阪タクドラ情報交換グループ<br>（参加はこちら）
+</a>
+
+</body>
 </html>
