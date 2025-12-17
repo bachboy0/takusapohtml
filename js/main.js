@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btn && content) {
     // トグルボタンのテキスト
     const texts = {
-      open: "🚅 新幹線運行情報<br>（タップで閉じる）",
-      close: "🚅 新幹線運行情報<br>（タップで開く）",
+      open: "🚅 新幹線運行情報",
+      close: "🚅 新幹線運行情報",
     };
 
     // ブラウザのローカルストレージから新幹線バナーの表示状態を取得

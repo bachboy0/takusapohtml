@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <link rel="manifest" href="manifest.json" />
+    <script>
+      if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+        .register("sw.js")
+        .then((registration) => {
+          console.log(
+          "Service Worker 登録成功。スコープ:",
+          registration.scope
+          );
+        })
+        .catch((error) => {
+          console.log("Service Worker 登録失敗:", error);
+        });
+      });
+      }
+    </script>
+
     <!-- Google tag (gtag.js) 
     <script
       async
@@ -21,14 +40,14 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="https://cf750778.cloudfree.jp/favicon.svg"
+      href="https://cf750778.cloudfree.jp/favicon.ico"
     />
     <meta name="generator" content="Astro v5.16.5" />
     <title>のりばカメラ</title>
 
     <link rel="stylesheet" href="css/style.css" />
 
-    <link rel="apple-touch-icon" href="images/fa.jpg" />
+    <link rel="apple-touch-icon" href="images/fa.png" />
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
     <script
@@ -40,7 +59,7 @@
 
   <body>
     <div class="banner-container">
-      <img src="images/jr.jpg" alt="バナー画像" class="banner-image" />
+      <img src="jr.jpg" alt="バナー画像" class="banner-image" />
     </div>
 
     <div id="main-content" class="main-wrapper">
@@ -133,10 +152,21 @@
               allowfullscreen
             ></iframe>
           </div>
+          <div class="camera-card">
+            <p class="camera-label">道頓堀</p>
+            <iframe
+              src="https://www.youtube.com/embed/1IB96p46tjE?si=zy8V5EgDwCJYrWXk&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
+              title="道頓堀"
+              class="camera-iframe"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
 
         <div id="shinkansen">
-          <h2 id="toggle-btn">🚅 新幹線運行情報<br />（タップで閉じる）</h2>
+          <h2 id="toggle-btn">🚅 新幹線運行情報</h2>
 
           <div id="shinkansen-content">
             <div class="shinkansen-frame-wrapper">
