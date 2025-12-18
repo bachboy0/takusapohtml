@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- Character Encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="大阪のタクシー乗り場や主要スポットのライブカメラ映像を配信。新大阪駅、大阪駅、道頓堀など複数地点の状況をリアルタイムで確認できます."
+    />
+    <title>のりばカメラ</title>
+
+    <!-- Web App Manifest -->
     <link rel="manifest" href="../manifest.json" />
- 
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://cf750778.cloudfree.jp/favicon.ico"
+    />
+    <link rel="apple-touch-icon" href="images/fa.png" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <!-- Google tag (gtag.js) - Google Analytics
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-DSERMB2DDZ"
@@ -16,33 +43,11 @@
 
       gtag("config", "G-DSERMB2DDZ");
     </script>
- 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="https://cf750778.cloudfree.jp/favicon.ico"
-    />
-    <meta
-      name="description"
-      content="大阪のタクシー乗り場や主要スポットのライブカメラ映像を配信。新大阪駅、大阪駅、道頓堀など複数地点の状況をリアルタイムで確認できます。"
-    />
-    <title>のりばカメラ</title>
+  -->
 
-    <link rel="stylesheet" href="css/style.css" />
-
-    <link rel="apple-touch-icon" href="images/fa.png" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-
-
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DSERMB2DDZ"
-    ></script>
-  
-    <script src="https://cf750778.cloudfree.jp/core/js/sw-register.js"></script>
-    <script src="js/main.js"></script>
+    <!-- External Scripts -->
+    <script src="js/sw-register.js"></script>
+    <script defer src="js/main.js"></script>
   </head>
 
   <body>
