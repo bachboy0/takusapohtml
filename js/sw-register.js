@@ -3,6 +3,7 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("sw.js")
+      /* Enable logging if needed
       .then((registration) => {
         console.log(
           "Service Worker 登録成功。スコープ:",
@@ -12,5 +13,6 @@ if ("serviceWorker" in navigator) {
       .catch((error) => {
         console.log("Service Worker 登録失敗:", error);
       });
+      */
   });
 }
