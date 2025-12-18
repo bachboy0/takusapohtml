@@ -9,7 +9,7 @@
     {
       "src": "./core/fa512.png",
       "sizes": "192x192",
-      "type": "./core/image/png"
+      "type": "image/png"
     },
     {
       "src": "./core/fa512.png",
