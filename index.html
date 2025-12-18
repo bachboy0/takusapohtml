@@ -1,247 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <link rel="manifest" href="manifest.json" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>大阪タクドラ QRコード</title>
 
-    <!-- Google tag (gtag.js) 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DSERMB2DDZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<style>
+  body {
+    margin: 0;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+             env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background: linear-gradient(to bottom, #000000, #001a25, #003e30);
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+  }
 
-      gtag("config", "G-DSERMB2DDZ");
-    </script>
-  -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="https://cf750778.cloudfree.jp/favicon.ico"
-    />
-    <meta
-      name="description"
-      content="大阪のタクシー乗り場や主要スポットのライブカメラ映像を配信。新大阪駅、大阪駅、道頓堀など複数地点の状況をリアルタイムで確認できます。"
-    />
-    <title>のりばカメラ</title>
+  img {
+    max-width: 85%;
+    max-height: 70vh;
+    border-radius: 12px;
+    box-shadow: 0 0 14px rgba(255,255,255,0.2);
+  }
 
-    <link rel="stylesheet" href="css/style.css" />
+  .title {
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin-bottom: 14px;
+    text-shadow: 0 0 6px rgba(0,255,170,0.6);
+  }
 
-    <link rel="apple-touch-icon" href="images/fa.png" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  .note {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #d8faff;
+  }
+</style>
 
-    <!-- Google tag (gtag.js)
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DSERMB2DDZ"
-    ></script>
-      -->
-    <script src="js/sw-register.js"></script>
-    <script src="js/main.js"></script>
-  </head>
+</head>
+<body>
 
-  <body>
-    <div class="banner-container">
-      <img src="jr.jpg" alt="バナー画像" class="banner-image" />
-    </div>
+<p class="title">🚕 即時!! 大阪タクドラ情報交換</p>
+<img src="qr.jpg" alt="大阪タクドラ QRコード">
+<p class="note">📱 QRコードを読み取って参加してください</p>
 
-    <div id="main-content" class="main-wrapper">
-      <div id="stream" class="stream-section">
-        <div class="view-selector">
-          <button
-            id="view-toggle-list"
-            class="view-toggle-btn view-toggle-active"
-            title="リスト表示"
-            aria-label="リスト表示"
-          >
-            <img
-              src="images/list-icon.svg"
-              alt="リスト表示"
-              width="20"
-              height="20"
-            />
-          </button>
-          <button
-            id="view-toggle-grid"
-            class="view-toggle-btn"
-            title="グリッド表示"
-            aria-label="グリッド表示"
-          >
-            <img
-              src="images/grid-icon.svg"
-              alt="グリッド表示"
-              width="20"
-              height="20"
-            />
-          </button>
-        </div>
-        <div class="camera-grid">
-          <div class="camera-card">
-            <p class="camera-label">新大阪待機場</p>
-            <iframe
-              src="https://www.youtube.com/embed/l_KhuN2nooY?si=ep0qArnw0T3ObZqA&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
-              title="新大阪駅待機場"
-              class="camera-iframe"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <div class="camera-card">
-            <p class="camera-label">新大阪乗り場</p>
-            <iframe
-              src="https://www.youtube.com/embed/vxRaY0mXBbU?si=TNPwNqWsOgC2ZBKG&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
-              title="新大阪駅乗り場"
-              class="camera-iframe"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <div class="camera-card">
-            <p class="camera-label">新御堂筋</p>
-            <iframe
-              src="https://www.youtube.com/embed/3gqzHOdDKp0?si=iy1VeYTWj-Gq0osv&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
-              title="新御堂筋"
-              class="camera-iframe"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <div class="camera-card">
-            <p class="camera-label">大阪駅</p>
-            <iframe
-              src="https://www.youtube.com/embed/jDCCynfjX9I?si=JhOYvi4V8R3-Q75x&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
-              title="大阪駅"
-              class="camera-iframe"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <div class="camera-card">
-            <p class="camera-label">北新地本通</p>
-            <iframe
-              src="https://www.youtube.com/embed/GuQ2MuyvKWY?si=zy8V5EgDwCJYrWXk&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
-              title="北新地本通"
-              class="camera-iframe"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="camera-card">
-            <p class="camera-label">道頓堀</p>
-            <iframe
-              src="https://www.youtube.com/embed/1IB96p46tjE?si=zy8V5EgDwCJYrWXk&autoplay=1&mute=1&controls=0&fs=0&rel=0&showinfo=0&disablekb=1"
-              title="道頓堀"
-              class="camera-iframe"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-
-        <div id="shinkansen">
-          <h2 id="toggle-btn">🚅 新幹線運行情報</h2>
-
-          <div id="shinkansen-content">
-            <div class="shinkansen-frame-wrapper">
-              <iframe
-                id="shinkansen-iframe"
-                src="https://traininfo.jr-central.co.jp/shinkansen/sp/ja/ti09.html#tab3"
-                title="JR東海 新幹線運行情報"
-                loading="lazy"
-                scrolling="no"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <h2 class="section-title">関連リンク</h2>
-
-        <a class="back-link" href="kanku.html">✈ 関空ライブ映像を見る</a>
-        <a class="back-link" href="https://soemon-cho.com/active/camera/"
-          >🍺 ミナミのライブ映像</a
-        >
-        <a class="back-link link-spacer" href="index2.html"
-          >🚉 旧verのページを見る</a
-        >
-
-        <div class="divider"></div>
-
-        <div class="counter-table">
-          <nobr>
-            <table
-              border="0"
-              cellspacing="0"
-              cellpadding="0"
-              style="margin: 0 auto"
-            >
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="https://ctr.stylemap.co.jp/"
-                      ><img
-                        src="https://www.f-counter.net/ani1/64/1729065540/"
-                        alt="無料アクセスカウンター"
-                        border="0"
-                        style="
-                          margin: 0px;
-                          padding: 0px;
-                          border: 0px;
-                          vertical-align: bottom;
-                        "
-                    /></a>
-                  </td>
-                  <td>
-                    <a href="https://ctr.stylemap.co.jp/"
-                      ><img
-                        src="https://www.f-counter.net/ani2/64/1729065540/"
-                        alt="無料アクセスカウンター"
-                        border="0"
-                        style="
-                          margin: 0px;
-                          padding: 0px;
-                          border: 0px;
-                          vertical-align: bottom;
-                        "
-                    /></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </nobr>
-        </div>
-
-        <div class="divider"></div>
-
-        <a
-          class="line-link"
-          href="https://line.me/ti/g2/ZWvOSsjSGjcax8BIDbFpZyqxTJyeV5PbSrv8XA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-        >
-          💬 大阪タクドラ情報交換グループ<br />（参加はこちら）
-        </a>
-      </div>
-
-      <footer class="site-footer">
-        <p>&copy;2025 大阪タクドラ情報交換グループ</p>
-        <p>ご利用の際は必ず安全な場所で停車してからご利用ください。</p>
-      </footer>
-    </div>
-  </body>
+</body>
 </html>
