@@ -1,0 +1,175 @@
+<!--
+  YouTubeサムネイルを2枚表示し、それぞれに見出しを付けるシンプルでレスポンシブなHTMLファイル
+  使い方: 下のVIDEO_IDを自分の動画IDに置き換えてください。
+  サムネイルURLの形式: https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
+  maxresdefault.jpgが無い場合はhqdefault.jpgが使われます。
+-->
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>関空ライブカメラ</title>
+  <style>
+    :root{
+      --card-bg: #ffffff;
+      --page-bg: #f6f7fb;
+      --accent: #ff4d4f;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(20,20,50,0.08);
+      --gap: 18px;
+      font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", Roboto, "Yu Gothic", sans-serif;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:var(--page-bg);
+      color:#0b1220;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .container{
+      width:min(1100px, 96%);
+    }
+    h1{
+      font-size:1.25rem;
+      margin:0 0 18px 0;
+      text-align:left;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:var(--gap);
+    }
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transition:transform .18s ease, box-shadow .18s ease;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+    }
+    .card:focus-within, .card:hover{transform:translateY(-6px); box-shadow:0 14px 30px rgba(20,20,50,0.12);}
+
+    .thumb-link{display:block; position:relative; text-decoration:none; color:inherit;}
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      display:block;
+      background:linear-gradient(180deg,#ddd,#bbb);
+    }
+    .meta{
+      padding:14px 16px 18px 16px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .title{
+      font-weight:700;
+      font-size:1rem;
+      line-height:1.25;
+      margin:0;
+      flex:1;
+    }
+    .subtitle{
+      margin:6px 0 0 0;
+      color:#495057;
+      font-size:0.9rem;
+    }
+    .play-badge{
+      background:var(--accent);
+      color:white;
+      font-size:0.75rem;
+      padding:6px 8px;
+      border-radius:999px;
+      white-space:nowrap;
+      text-decoration:none;
+      transition:opacity 0.2s ease;
+    }
+    .play-badge:hover{opacity:0.8;}
+
+    /* モバイルのタップ領域確保 */
+    .thumb-link:focus{outline:4px solid rgba(255,77,79,0.12); outline-offset:2px}
+
+    @media (max-width:420px){
+      .meta{padding:12px}
+      .title{font-size:0.95rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>関西空港 ライブカメラ</h1>
+
+    <div class="grid" role="list">
+
+      <!-- カード1 -->
+      <article class="card" role="listitem">
+        <a class="thumb-link" href="https://www.youtube.com/watch?v=z-74c5RKNaw" target="_blank" rel="noopener noreferrer" aria-label="動画を新しいタブで開く: Never Gonna Give You Up">
+          <img
+            class="thumb"
+            src="https://img.youtube.com/vi/z-74c5RKNaw/maxresdefault.jpg"
+            onerror="this.onerror=null;this.src='https://img.youtube.com/vi/z-74c5RKNaw/hqdefault.jpg'"
+            alt="Never Gonna Give You Up - サムネイル"
+            loading="lazy">
+        </a>
+        <div class="meta">
+          <div>
+            <h2 class="title">関空ターミナル1</h2>
+            <p class="subtitle">関西空港タクシー乗り場ターミナル1</p>
+          </div>
+          <a class="play-badge" href="https://www.youtube.com/watch?v=z-74c5RKNaw" target="_blank" rel="noopener noreferrer">再生</a>
+        </div>
+      </article>
+
+      <!-- カード2 -->
+      <article class="card" role="listitem">
+        <a class="thumb-link" href="https://www.youtube.com/watch?v=uuR6dyoCoyg" target="_blank" rel="noopener noreferrer" aria-label="動画を新しいタブで開く: YouTube Developers Live">
+          <img
+            class="thumb"
+            src="https://img.youtube.com/vi/uuR6dyoCoyg/maxresdefault.jpg"
+            onerror="this.onerror=null;this.src='https://img.youtube.com/vi/uuR6dyoCoyg/hqdefault.jpg'"
+            alt="YouTube Developers Live - サムネイル"
+            loading="lazy">
+        </a>
+        <div class="meta">
+          <div>
+            <h2 class="title">関空ターミナル２</h2>
+            <p class="subtitle">関西空港タクシー乗り場ターミナル２</p>
+          </div>
+          <a class="play-badge" href="https://www.youtube.com/watch?v=uuR6dyoCoyg" target="_blank" rel="noopener noreferrer">再生</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p style="margin-top:18px;color:#6b7280;font-size:0.9rem">→　<a href="../main/index.html">新大阪ライブカメラへ戻る</a></p>
+  <hr><!--カウンター画像からは配布サイトへリンクが設定されています。また、誤作動、誤表示の原因となりますのでコードの改変、改行は行わないで下さい。
+このコメント部分は削除して頂いても結構です。-->
+<nobr><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td><a href="https://ctr.stylemap.co.jp/"><img src="https://www.f-counter.net/ani1/64/1729065540/" alt="無料アクセスカウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></a></td>
+<td><a href="https://ctr.stylemap.co.jp/"><img src="https://www.f-counter.net/ani2/64/1729065540/" alt="無料アクセスカウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></a></td></tr></tbody></table></nobr>
+</div>
+
+  <script>
+    document.querySelectorAll('.thumb-link').forEach(link => {
+      const card = link.closest('.card');
+      if(card){
+        card.tabIndex = 0;
+        card.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            link.click();
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
